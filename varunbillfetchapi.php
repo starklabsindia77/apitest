@@ -71,7 +71,7 @@ $plainText = '<?xml version="1.0" encoding="UTF-8"?><billFetchRequest>
       <customerAdhaar></customerAdhaar>
       <customerPan></customerPan>
    </customerInfo>
-   <billerId>OTME00005XXZ43</billerId>
+   <billerId>SHRI00000NAT7D</billerId>
    <inputParams>
       <input>
          <paramName>a</paramName>
