@@ -58,7 +58,18 @@ function generateRandomString($length = 35) {
 /* * ************************************************************ */
 /* * ************************************************************ */
 /* * ************************************************************ */
-$plainText = '<?xml version="1.0" encoding="UTF-8"?><billerInfoRequest>
+$plainText = '<?xml version="1.0" encoding="UTF-8"?>
+<billerInfoRequest>
+    <billerId>HATH00000NATRZ</billerId>
+    <InputParams>
+        <paramInfo>
+            <paramName>1172779056</paramName>
+            <dataType>ALPHANUMERIC</dataType>
+            <isOptional>false</isOptional>
+            <minLength>0</minLength>
+            <maxLength>0</maxLength>
+        </paramInfo>
+    </InputParams>
 </billerInfoRequest>';
 $key = "EE6AB1DA375D8FAF866F3BDBAC71FD34";
 $encrypt_xml_data = encrypt($plainText, $key);
@@ -81,7 +92,7 @@ $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 $result = curl_exec($ch);
-
+echo $result . "////////////////////";
 $response = decrypt($result, $key);
 echo "<pre>";
 echo htmlentities($response);

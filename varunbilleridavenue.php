@@ -59,7 +59,7 @@ function generateRandomString($length = 35) {
 /* * ************************************************************ */
 /* * ************************************************************ */
 $plainText = '<?xml version="1.0" encoding="UTF-8"?><billerInfoRequest>
-</billerInfoRequest>';
+<billerId>ADIT00000NATRA</billerId></billerInfoRequest>';
 $key = "EE6AB1DA375D8FAF866F3BDBAC71FD34";
 $encrypt_xml_data = encrypt($plainText, $key);
 
@@ -81,7 +81,7 @@ $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 $result = curl_exec($ch);
-
+echo $result . "////////////////////";
 $response = decrypt($result, $key);
 echo "<pre>";
 echo htmlentities($response);

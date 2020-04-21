@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<billerInfoResponse>
+    <responseCode>000</responseCode>
+    <biller>
+        <billerId>ADIT00000NATRA</billerId>
+        <billerName>Aditya Birla Housing Finance Limited</billerName>
+        <billerCategory>Loan Repayment</billerCategory>
+        <billerAdhoc>false</billerAdhoc>
+        <billerCoverage>IND</billerCoverage>
+        <billerFetchRequiremet>MANDATORY</billerFetchRequiremet>
+        <billerPaymentExactness>Exact and above</billerPaymentExactness>
+        <billerSupportBillValidation>NOT_SUPPORTED</billerSupportBillValidation>
+        <supportPendingStatus>Yes</supportPendingStatus>
+        <supportDeemed>Yes</supportDeemed>
+        <billerTimeout>480</billerTimeout>
+        <billerInputParams>
+            <paramInfo>
+                <paramName>Loan Account Number</paramName>
+                <dataType>ALPHANUMERIC</dataType>
+                <isOptional>false</isOptional>
+                <minLength>20</minLength>
+                <maxLength>20</maxLength>
+                <regEx>^[Ll][Nn][a-zA-Z]{3}[a-zA-Z0-9_]{3}[-][0-9]{11}$</regEx>
+            </paramInfo>
+            <paramInfo>
+                <paramName>Registered Mobile Number</paramName>
+                <dataType>NUMERIC</dataType>
+                <isOptional>false</isOptional>
+                <minLength>10</minLength>
+                <maxLength>10</maxLength>
+                <regEx>^[5-9][0-9]{9}$</regEx>
+            </paramInfo>
+        </billerInputParams>
+        <billerAmountOptions>BASE_BILL_AMOUNT,,,</billerAmountOptions>
+        <billerPaymentModes>Internet Banking, Debit Card, Prepaid Card, IMPS, Cash, UPI, Wallet, NEFT, AEPS, Account Transfer</billerPaymentModes>
+        <billerDescription></billerDescription>
+        <rechargeAmountInValidationRequest></rechargeAmountInValidationRequest>
+        <billerPaymentChannels>
+            <paymentChannelInfo>
+                <paymentChannelName>INT</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>INTB</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>MOB</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>MOBB</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>POS</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>MPOS</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>ATM</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>BNKBRNCH</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>KIOSK</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>AGT</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+            <paymentChannelInfo>
+                <paymentChannelName>BSC</paymentChannelName>
+                <minAmount>100</minAmount>
+                <maxAmount>99999900</maxAmount>
+            </paymentChannelInfo>
+        </billerPaymentChannels>
+    </biller>
+</billerInfoResponse>
