@@ -57,7 +57,8 @@ function generateRandomString($length = 35) {
 
 
 function getBillfetch(){
-		$plainText = '<?xml version="1.0" encoding="UTF-8"?><billerInfoRequest><billerId>OTME00005XXZ43</billerId></billerInfoRequest>';
+		$plainText = '<?xml version="1.0" encoding="UTF-8"?>
+    <billerInfoRequest><billerId>OTME00005XXZ43</billerId></billerInfoRequest>';
 $key = "76CA86D34787F65F6CDF86B268395B55";
 					$key = "76CA86D34787F65F6CDF86B268395B55";
 					$encrypt_xml_data = encrypt($plainText, $key);

@@ -187,89 +187,89 @@ getPayment($data['requestId']);
 function getPayment($reqid){
 	
 	$plainText = '<?xml version="1.0" encoding="UTF-8"?>
-<billPaymentRequest>
-    <agentId>CC01CC01513515340681</agentId>
-    <billerAdhoc>true</billerAdhoc>
-    <agentDeviceInfo>
-        <ip>192.168.2.73</ip>
-        <initChannel>AGT</initChannel>
-        <mac>01-23-45-67-89-ab</mac>
-    </agentDeviceInfo>
-    <customerInfo>
-        <customerMobile>9898990083</customerMobile>
-        <customerEmail></customerEmail>
-        <customerAdhaar></customerAdhaar>
-        <customerPan></customerPan>
-    </customerInfo>
-    <billerId>OTNS00005XXZ43</billerId>
-   <inputParams>
-      <input>
-         <paramName>a</paramName>
-         <paramValue>10</paramValue>
-      </input>
-      <input>
-         <paramName>a b</paramName>
-         <paramValue>20</paramValue>
-      </input>
-      <input>
-         <paramName>a b c</paramName>
-         <paramValue>30</paramValue>
-      </input>
-      <input>
-         <paramName>a b c d</paramName>
-         <paramValue>40</paramValue>
-      </input>
-      <input>
-         <paramName>a b c d e</paramName>
-         <paramValue>50</paramValue>
-      </input>
-   </inputParams>
-   <amountInfo>
-       <amount>100000</amount>
-       <currency>356</currency>
-       <custConvFee>0</custConvFee>
-       <amountTags></amountTags>
-   </amountInfo>
-   <paymentMethod>
-       <paymentMode>Cash</paymentMode>
-       <quickPay>Y</quickPay>
-       <splitPay>N</splitPay>
-   </paymentMethod>
-   <paymentInfo>
-       <info>
-           <infoName>Remarks</infoName>
-           <infoValue>Received</infoValue>
-       </info>
-   </paymentInfo>
-</billPaymentRequest>';
-$key = "76CA86D34787F65F6CDF86B268395B55";
-$encrypt_xml_data = encrypt($plainText, $key);
+    <billPaymentRequest>
+        <agentId>CC01CC01513515340681</agentId>
+        <billerAdhoc>true</billerAdhoc>
+        <agentDeviceInfo>
+            <ip>192.168.2.73</ip>
+            <initChannel>AGT</initChannel>
+            <mac>01-23-45-67-89-ab</mac>
+        </agentDeviceInfo>
+        <customerInfo>
+            <customerMobile>9898990083</customerMobile>
+            <customerEmail></customerEmail>
+            <customerAdhaar></customerAdhaar>
+            <customerPan></customerPan>
+        </customerInfo>
+        <billerId>OTNS00005XXZ43</billerId>
+        <inputParams>
+            <input>
+                <paramName>a</paramName>
+                <paramValue>10</paramValue>
+            </input>
+            <input>
+                <paramName>a b</paramName>
+                <paramValue>20</paramValue>
+            </input>
+            <input>
+                <paramName>a b c</paramName>
+                <paramValue>30</paramValue>
+            </input>
+            <input>
+                <paramName>a b c d</paramName>
+                <paramValue>40</paramValue>
+            </input>
+            <input>
+                <paramName>a b c d e</paramName>
+                <paramValue>50</paramValue>
+            </input>
+        </inputParams>
+        <amountInfo>
+            <amount>100000</amount>
+            <currency>356</currency>
+            <custConvFee>0</custConvFee>
+            <amountTags></amountTags>
+        </amountInfo>
+        <paymentMethod>
+            <paymentMode>Cash</paymentMode>
+            <quickPay>Y</quickPay>
+            <splitPay>N</splitPay>
+        </paymentMethod>
+        <paymentInfo>
+            <info>
+                <infoName>Remarks</infoName>
+                <infoValue>Received</infoValue>
+            </info>
+        </paymentInfo>
+    </billPaymentRequest>';
+    $key = "76CA86D34787F65F6CDF86B268395B55";
+    $encrypt_xml_data = encrypt($plainText, $key);
 
-$data['accessCode'] = "AVMI42PE96HV29VNMC";
-$data['requestId'] = $reqid;
+    $data['accessCode'] = "AVMI42PE96HV29VNMC";
+    $data['requestId'] = $reqid;
 
-echo "request id: ".$data['requestId'];
-echo "------------------\n";
-$data['encRequest'] = $encrypt_xml_data;
-$data['ver'] = "1.0";
-$data['instituteId'] = "CO02";
+    echo "request id: ".$data['requestId'];
+    echo "------------------\n";
+    $data['encRequest'] = $encrypt_xml_data;
+    $data['ver'] = "1.0";
+    $data['instituteId'] = "CO02";
 
-$parameters = http_build_query($data);
+    $parameters = http_build_query($data);
 
-$url = "https://stgapi.billavenue.com/billpay/extBillPayCntrl/billPayRequest/xml";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-$result = curl_exec($ch);
-echo $result . "////////////////////";
-$response = decrypt($result, $key);
-echo "<pre>";
-echo htmlentities($response);
+    $url = "https://stgapi.billavenue.com/billpay/extBillPayCntrl/billPayRequest/xml";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    $result = curl_exec($ch);
+    echo $result . "////////////////////";
+    $response = decrypt($result, $key);
+    echo "<pre>";
+    echo htmlentities($response);
 
 }
 

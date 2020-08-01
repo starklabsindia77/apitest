@@ -58,8 +58,7 @@ function generateRandomString($length = 35) {
 /* * ************************************************************ */
 /* * ************************************************************ */
 /* * ************************************************************ */
-$plainText = '<?xml version="1.0" encoding="UTF-8"?><billerInfoRequest>
-</billerInfoRequest>';
+$plainText = '<?xml version="1.0" encoding="UTF-8"?><billerInfoRequest><billerId>JUSC00000JAM01</billerId></billerInfoRequest>';
 $key = "EE6AB1DA375D8FAF866F3BDBAC71FD34";
 $encrypt_xml_data = encrypt($plainText, $key);
 
